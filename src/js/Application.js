@@ -22,13 +22,11 @@ export default class Application extends EventEmitter {
     this._beat.on(Beat.events.BIT, (bit) => {
       const message = document.createElement("div");
       message.classList.add("message");
-      console.log(lyrics)
       message.innerText = lyrics[count];
       count++;
       if(count==6) {
         count=0;
       }
-
       document.querySelector(".main").appendChild(message);
     })
   }
