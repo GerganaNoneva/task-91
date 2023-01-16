@@ -19,6 +19,18 @@ export default class Application extends EventEmitter {
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     let count=0;
 
+    this._beat.addListener(Beat.events.BIT,(_)=>{
+      console.log('kur')
+      const message = document.createElement("div");
+      message.classList.add("message");
+      message.innerText = lyrics[count];
+      count++;
+      if(count==6) {
+        count=0;
+      }
+      document.querySelector(".main").appendChild(message);
+    })
+    /*
     this._beat.on(Beat.events.BIT,() => {
       
 
@@ -36,9 +48,9 @@ export default class Application extends EventEmitter {
       if(count==6) {
         count=0;
       }
-      document.querySelector(".main").appendChild(message);})*/
+      document.querySelector(".main").appendChild(message);})
     
-    })
+    })*/
 }
 }
 
