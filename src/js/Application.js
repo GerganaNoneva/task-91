@@ -23,7 +23,7 @@ export default class Application extends EventEmitter {
       const message = document.createElement("div");
       message.classList.add("message");
       console.log(lyrics)
-      message.innerText = lyrics[bit];
+      message.innerText = lyrics[count];
       count++;
       if(count==6) {
         count=0;
