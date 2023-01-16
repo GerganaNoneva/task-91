@@ -17,18 +17,28 @@ export default class Application extends EventEmitter {
 
   _create() {
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    let count = 0;
+    let count=0;
 
-    this._beat.on(Beat.events.BIT, (bit) => {
+    this._beat.on(Beat.events.BIT,() => {
+      
+
+        lyrics.forEach(word=> {
+        const message = document.createElement("div");
+        message.classList.add("message");
+        message.innerText = word;
+        document.querySelector(".main").appendChild(message);
+      })
+  /*
       const message = document.createElement("div");
       message.classList.add("message");
-      message.innerText = lyrics[count];
-      count++;
+      message.innerText = lyrics[start];
+      bit++;
       if(count==6) {
         count=0;
       }
-      document.querySelector(".main").appendChild(message);
+      document.querySelector(".main").appendChild(message);})*/
+    
     })
-  }
+}
 }
 
